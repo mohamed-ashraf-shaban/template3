@@ -1519,3 +1519,313 @@ footer p{
   }
   
   /* End Animation */
+/* ========== MOBILE RESPONSIVE FIXES ========== */
+
+/* Add viewport meta tag to HTML first:
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+*/
+
+/* Fix Events Section - Countdown Timer */
+.events .row {
+    justify-content: center;
+}
+
+/* Make countdown boxes responsive */
+@media (max-width: 767px) {
+    .counter-box {
+        width: 50%;
+        margin-bottom: 15px;
+    }
+    
+    .counter-box .inner-box {
+        padding: 10px 5px;
+    }
+    
+    .counter-box .inner-box span:first-child {
+        font-size: 28px !important;
+        padding: 8px 10px;
+    }
+    
+    .counter-box .inner-box span:last-child {
+        font-size: 11px;
+        padding: 6px 5px;
+    }
+    
+    .events h3 {
+        font-size: 24px !important;
+        margin: 20px 15px;
+        text-align: center;
+    }
+    
+    .events p {
+        font-size: 16px;
+        padding: 0 15px;
+        text-align: center;
+        line-height: 1.6;
+    }
+    
+    /* Make event image smaller on mobile */
+    .events img {
+        max-width: 280px;
+        margin: 20px auto;
+        display: block;
+    }
+}
+
+/* Small mobile devices (320px - 480px) */
+@media (max-width: 480px) {
+    .counter-box {
+        width: 48%;
+    }
+    
+    .counter-box .inner-box span:first-child {
+        font-size: 24px !important;
+        padding: 6px 8px;
+    }
+    
+    .counter-box .inner-box span:last-child {
+        font-size: 10px;
+        padding: 5px 3px;
+    }
+    
+    .events h3 {
+        font-size: 20px !important;
+    }
+    
+    .events p {
+        font-size: 14px;
+    }
+}
+
+/* Fix Subscribe Form Responsiveness */
+@media (max-width: 991px) {
+    .subscribe {
+        width: 85%;
+        padding: 25px;
+    }
+}
+
+@media (max-width: 767px) {
+    .subscribe {
+        width: 100%;
+        padding: 20px;
+        border-radius: 10px;
+    }
+    
+    .subscribe input {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 15px;
+        font-size: 14px;
+        border-radius: 10px !important;
+    }
+    
+    .subscribe button {
+        width: 100%;
+        border-radius: 10px !important;
+        padding: 15px;
+        font-size: 16px;
+    }
+}
+
+/* Fix Stats Section on Mobile */
+@media (max-width: 767px) {
+    .stats-awesome h2 {
+        font-size: 28px !important;
+        margin-bottom: 30px;
+        padding: 0 15px;
+        text-align: center;
+    }
+    
+    .stats-awesome .stat-box {
+        margin-bottom: 20px;
+        padding: 25px 15px;
+    }
+    
+    .stats-awesome .stat-box .number {
+        font-size: 40px;
+    }
+    
+    .stats-awesome .stat-box .text {
+        font-size: 16px;
+    }
+}
+
+/* Fix Pricing Section on Mobile */
+@media (max-width: 767px) {
+    .pricing .inner-plan {
+        margin-bottom: 30px;
+    }
+    
+    .head-plan .amount {
+        font-size: 48px !important;
+    }
+    
+    .head-plan h3 {
+        font-size: 22px !important;
+    }
+    
+    .pricing ul li {
+        font-size: 14px;
+        padding: 15px;
+    }
+}
+
+/* Fix Video Section Responsiveness */
+@media (max-width: 991px) {
+    .Videos .col-md-3 {
+        width: 100%;
+    }
+    
+    .poster-video {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 767px) {
+    .Videos .top-videos .head-text {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .Videos .top-videos .head-text h4 {
+        margin-bottom: 10px;
+    }
+    
+    .Videos .top-videos ul li {
+        font-size: 14px;
+    }
+}
+
+/* Fix Discount/Request Section */
+@media (max-width: 991px) {
+    .img-container {
+        padding: 60px 20px;
+    }
+    
+    .form-container {
+        padding: 45px 20px;
+    }
+    
+    .text-discount h2 {
+        font-size: 28px !important;
+    }
+    
+    .text-discount p {
+        font-size: 16px;
+        line-height: 1.7;
+    }
+}
+
+@media (max-width: 767px) {
+    .form-container h2 {
+        font-size: 28px !important;
+    }
+    
+    .form-container input,
+    .form-container textarea {
+        font-size: 14px;
+    }
+    
+    .form-container button {
+        width: 100%;
+        font-size: 18px;
+    }
+}
+
+/* Fix Gallery Section */
+@media (max-width: 767px) {
+    .galary-box {
+        padding: 15px 10px;
+    }
+    
+    .galary-box .inner-box {
+        border-width: 10px;
+    }
+}
+
+/* Fix Team Members Section */
+@media (max-width: 767px) {
+    .team-box {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .team-icons {
+        flex-direction: row;
+        margin: 15px 0;
+    }
+    
+    .team-icons i {
+        margin: 0 10px;
+    }
+    
+    .team-text {
+        padding-left: 0;
+        text-align: center;
+    }
+}
+
+/* Fix Services Section */
+@media (max-width: 767px) {
+    .services-box {
+        margin-bottom: 30px;
+    }
+    
+    .details {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .details p {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+    
+    .details p::after {
+        display: none;
+    }
+    
+    .details span {
+        margin: 0;
+    }
+}
+
+/* Improve Overall Mobile Padding */
+@media (max-width: 767px) {
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    section {
+        padding: 60px 0 !important;
+    }
+    
+    .main-title {
+        font-size: 20px;
+        padding: 8px 15px;
+        margin-bottom: 50px;
+    }
+    
+    .main-title::before,
+    .main-title::after {
+        width: 10px;
+        height: 10px;
+    }
+}
+
+/* Fix Images for Mobile */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Better touch targets for mobile */
+@media (max-width: 767px) {
+    a, button {
+        min-height: 44px;
+        min-width: 44px;
+    }
+}
