@@ -1829,3 +1829,108 @@ img {
         min-width: 44px;
     }
 }
+/* ============ TEAM MEMBERS MOBILE FIX ============ */
+
+/* Tablet and below */
+@media (max-width: 991px) {
+    .team-box {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .team-box img {
+        width: 100%;
+        max-width: 350px;
+        margin-bottom: 20px;
+    }
+    
+    .team-icons {
+        flex-direction: row !important;
+        width: 100%;
+        justify-content: center;
+        margin: 20px 0;
+    }
+    
+    .team-icons i {
+        margin: 0 15px;
+        height: auto;
+        padding: 10px;
+    }
+    
+    .team-text {
+        padding-left: 0 !important;
+        text-align: center;
+        width: 100%;
+    }
+    
+    .info::before,
+    .info::after {
+        width: 100% !important;
+    }
+}
+
+/* Mobile specific adjustments */
+@media (max-width: 767px) {
+    .team-members {
+        padding: 60px 0;
+    }
+    
+    .team-box {
+        flex-direction: column;
+    }
+    
+    .team-box img {
+        width: 100%;
+        border-radius: 10px;
+    }
+    
+    .team-icons {
+        flex-direction: row !important;
+        width: 100%;
+        margin: 15px 0;
+    }
+    
+    .team-icons a {
+        margin: 0 10px;
+    }
+    
+    .team-icons i {
+        font-size: 20px;
+        height: auto;
+    }
+    
+    .team-text {
+        padding-left: 0 !important;
+        text-align: center;
+    }
+    
+    .team-text h5 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    
+    .team-text p {
+        font-size: 14px;
+        color: #777;
+    }
+    
+    .info {
+        margin-bottom: 40px;
+    }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+    .team-box img {
+        max-width: 100%;
+    }
+    
+    .team-icons a {
+        margin: 0 8px;
+    }
+    
+    .team-icons i {
+        font-size: 18px;
+    }
+}
+
