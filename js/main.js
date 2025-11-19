@@ -1,65 +1,152 @@
-let section = document.querySelector(".skill-box");
-let spans = document.querySelectorAll(".skill-box .skill-inner");
-let statsOffset = document.querySelector(".stats-awesome");
-let spanNum = document.querySelectorAll(".number");
-let started = false;
+// ====================================================================
+// OPTIMIZED JAVASCRIPT FOR ELZERO WORLD PORTFOLIO
+// Improved Performance, Countdown Timer, and Animations
+// ====================================================================
 
+// Cache DOM elements for better performance
+const skillSection = document.querySelector(".skill-box");
+const skillSpans = document.querySelectorAll(".skill-box .skill-inner");
+const statsSection = document.querySelector(".stats-awesome");
+const statsNumbers = document.querySelectorAll(".number");
+let animationStarted = false;
 
-window.onscroll = function(){
-// ================================================= progress animation counter ==============
-    if(window.scrollY >= section.offsetTop - 300){
-        spans.forEach((div) =>{
-            div.style.width = div.dataset.width;
-        })
-    }
-// ========================================counter=========================================
-    if(window.scrollY >= statsOffset.offsetTop - 300){
-        if(!started){
-            spanNum.forEach((number) => startCount(number));
-        }
-        started = true;
-    }
-
-}
-// ========================================= counter function ========================
-function startCount(el){
-    let goal = el.dataset.goal;
-    let count = setInterval(() => {
-        el.textContent++
-        if(el.textContent == goal){
-            clearInterval(count);
-        }
-    }, 100 / goal);
+// Debounce function for performance optimization
+function debounce(func, wait = 10) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
 }
 
+// Main scroll handler for animations
+function handleScroll() {
+    const scrollY = window.scrollY;
 
+    // Skills progress bar animation
+    if (skillSection && scrollY >= skillSection.offsetTop - 300) {
+        skillSpans.forEach((span) => {
+            span.style.width = span.dataset.width;
+        });
+    }
 
-// The End Of The Year Date
-// 1000 milliseconds = 1 Second
+    // Stats counter animation
+    if (statsSection && scrollY >= statsSection.offsetTop - 300) {
+        if (!animationStarted) {
+            statsNumbers.forEach((number) => startCount(number));
+            animationStarted = true;
+        }
+    }
+}
 
-let countDownDate = new Date("Dec 31, 2022 23:59:59").getTime();
-// console.log(countDownDate);
+// Counter animation function with smooth increment
+function startCount(element) {
+    const goal = parseInt(element.dataset.goal);
+    const increment = goal / 100; // Smoother animation
+    let current = 0;
 
-let counter = setInterval(() => {
-  // Get Date Now
-  let dateNow = new Date().getTime();
+    const counter = setInterval(() => {
+        current += increment;
+        if (current >= goal) {
+            element.textContent = goal;
+            clearInterval(counter);
+        } else {
+            element.textContent = Math.floor(current);
+        }
+    }, 20);
+}
 
-  // Find The Date Difference Between Now And Countdown Date
-  let dateDiff = countDownDate - dateNow;
+// Countdown Timer Function
+function initCountdown() {
+    // Set your event date here (YEAR, MONTH-1, DAY, HOUR, MINUTE, SECOND)
+    // Note: Month is 0-indexed (0 = January, 11 = December)
+    const countDownDate = new Date("Dec 31, 2026 23:59:59").getTime();
 
-  // Get Time Units
-  // let days = Math.floor(dateDiff / 1000 / 60 / 60 / 24);
-  let days = Math.floor(dateDiff / (1000 * 60 * 60 * 24));
-  let hours = Math.floor((dateDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  let minutes = Math.floor((dateDiff % (1000 * 60 * 60)) / (1000 * 60));
-  let seconds = Math.floor((dateDiff % (1000 * 60)) / 1000);
+    const updateCountdown = () => {
+        const now = new Date().getTime();
+        const distance = countDownDate - now;
 
-  document.querySelector(".days").innerHTML = days < 10 ? `0${days}` : days;
-  document.querySelector(".hours").innerHTML = hours < 10 ? `0${hours}` : hours;
-  document.querySelector(".minutes").innerHTML = minutes < 10 ? `0${minutes}` : minutes;
-  document.querySelector(".seconds").innerHTML = seconds < 10 ? `0${seconds}` : seconds;
+        // If countdown is finished
+        if (distance < 0) {
+            clearInterval(countdownTimer);
+            const daysEl = document.querySelector(".days");
+            const hoursEl = document.querySelector(".hours");
+            const minutesEl = document.querySelector(".minutes");
+            const secondsEl = document.querySelector(".seconds");
 
-  if (dateDiff < 0) {
-    clearInterval(counter);
-  }
-}, 1000);
+            if (daysEl) daysEl.innerHTML = "00";
+            if (hoursEl) hoursEl.innerHTML = "00";
+            if (minutesEl) minutesEl.innerHTML = "00";
+            if (secondsEl) secondsEl.innerHTML = "00";
+            return;
+        }
+
+        // Calculate time units
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Update DOM with padded values
+        const daysEl = document.querySelector(".days");
+        const hoursEl = document.querySelector(".hours");
+        const minutesEl = document.querySelector(".minutes");
+        const secondsEl = document.querySelector(".seconds");
+
+        if (daysEl) daysEl.innerHTML = days.toString().padStart(2, '0');
+        if (hoursEl) hoursEl.innerHTML = hours.toString().padStart(2, '0');
+        if (minutesEl) minutesEl.innerHTML = minutes.toString().padStart(2, '0');
+        if (secondsEl) secondsEl.innerHTML = seconds.toString().padStart(2, '0');
+    };
+
+    // Initial call
+    updateCountdown();
+
+    // Update every second
+    const countdownTimer = setInterval(updateCountdown, 1000);
+}
+
+// Smooth scroll for anchor links
+function initSmoothScroll() {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+
+            // Skip if href is just "#"
+            if (href === '#') return;
+
+            e.preventDefault();
+            const target = document.querySelector(href);
+
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+}
+
+// Initialize all functions when DOM is ready
+document.addEventListener('DOMContentLoaded', () => {
+    // Initialize countdown timer
+    initCountdown();
+
+    // Initialize smooth scrolling
+    initSmoothScroll();
+
+    // Add optimized scroll event listener
+    window.addEventListener('scroll', debounce(handleScroll, 10));
+
+    console.log('✅ All scripts initialized successfully');
+});
+
+// Optional: Add loading animation
+window.addEventListener('load', () => {
+    document.body.classList.add('loaded');
+});
