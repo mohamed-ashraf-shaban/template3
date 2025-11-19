@@ -1519,88 +1519,177 @@ footer p{
   }
   
   /* End Animation */
-/* ========== MOBILE RESPONSIVE FIXES ========== */
 
-/* Add viewport meta tag to HTML first:
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-*/
+/* ====================================================================
+   COMPREHENSIVE MOBILE RESPONSIVE IMPROVEMENTS
+   Added for full cross-device compatibility
+   ==================================================================== */
 
-/* Fix Events Section - Countdown Timer */
-.events .row {
-    justify-content: center;
+/* Base responsive images */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
-/* Make countdown boxes responsive */
+/* Container improvements */
+@media (max-width: 991px) {
+    .container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+@media (max-width: 767px) {
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+/* ========== HEADER & NAVIGATION ========== */
+@media (max-width: 991px) {
+    .header .mega-menu {
+        padding: 15px;
+    }
+
+    .header .mega-menu .links li a {
+        font-size: 16px;
+    }
+}
+
+/* ========== SECTIONS PADDING ========== */
+@media (max-width: 991px) {
+    .articles,
+    .galary,
+    .features,
+    .testimonials,
+    .team-members,
+    .services,
+    .our-skills,
+    .work-steps,
+    .events,
+    .pricing,
+    .Videos,
+    .stats-awesome,
+    .footer {
+        padding: 70px 0 !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .articles,
+    .galary,
+    .features,
+    .testimonials,
+    .team-members,
+    .services,
+    .our-skills,
+    .work-steps,
+    .events,
+    .pricing,
+    .Videos,
+    .stats-awesome,
+    .footer {
+        padding: 50px 0 !important;
+    }
+}
+
+/* ========== MAIN TITLES ========== */
+@media (max-width: 767px) {
+    .main-title {
+        font-size: 18px !important;
+        padding: 8px 15px;
+        margin: 0 auto 50px !important;
+    }
+
+    .main-title::before,
+    .main-title::after {
+        width: 10px;
+        height: 10px;
+        left: -25px;
+    }
+
+    .main-title::after {
+        right: -25px;
+    }
+}
+
+/* ========== DOTS DECORATION ========== */
+@media (max-width: 1200px) {
+    .dots {
+        display: none;
+    }
+}
+
+/* ========== EVENTS SECTION COUNTDOWN FIX ========== */
+@media (max-width: 991px) {
+    .events .row {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
+
 @media (max-width: 767px) {
     .counter-box {
         width: 50%;
-        margin-bottom: 15px;
+        padding: 5px;
+        margin-bottom: 10px;
     }
-    
+
     .counter-box .inner-box {
-        padding: 10px 5px;
+        padding: 8px 5px;
     }
-    
+
     .counter-box .inner-box span:first-child {
         font-size: 28px !important;
         padding: 8px 10px;
     }
-    
+
     .counter-box .inner-box span:last-child {
         font-size: 11px;
         padding: 6px 5px;
     }
-    
+
     .events h3 {
         font-size: 24px !important;
-        margin: 20px 15px;
         text-align: center;
+        margin: 20px 15px;
     }
-    
+
     .events p {
         font-size: 16px;
-        padding: 0 15px;
         text-align: center;
-        line-height: 1.6;
+        padding: 0 15px;
+        line-height: 1.7;
     }
-    
-    /* Make event image smaller on mobile */
+
     .events img {
         max-width: 280px;
         margin: 20px auto;
-        display: block;
     }
 }
 
-/* Small mobile devices (320px - 480px) */
 @media (max-width: 480px) {
     .counter-box {
         width: 48%;
     }
-    
+
     .counter-box .inner-box span:first-child {
         font-size: 24px !important;
         padding: 6px 8px;
     }
-    
+
     .counter-box .inner-box span:last-child {
         font-size: 10px;
         padding: 5px 3px;
     }
-    
-    .events h3 {
-        font-size: 20px !important;
-    }
-    
-    .events p {
-        font-size: 14px;
-    }
 }
 
-/* Fix Subscribe Form Responsiveness */
+/* ========== SUBSCRIBE FORM ========== */
 @media (max-width: 991px) {
     .subscribe {
-        width: 85%;
+        width: 80%;
         padding: 25px;
     }
 }
@@ -1609,108 +1698,224 @@ footer p{
     .subscribe {
         width: 100%;
         padding: 20px;
-        border-radius: 10px;
+        border-radius: 10px !important;
+        flex-direction: column;
     }
-    
+
     .subscribe input {
-        width: 100%;
-        margin-right: 0;
+        width: 100% !important;
+        margin-right: 0 !important;
         margin-bottom: 15px;
-        font-size: 14px;
         border-radius: 10px !important;
     }
-    
+
     .subscribe button {
         width: 100%;
         border-radius: 10px !important;
-        padding: 15px;
-        font-size: 16px;
     }
 }
 
-/* Fix Stats Section on Mobile */
+/* ========== TEAM MEMBERS MOBILE FIX ========== */
+@media (max-width: 991px) {
+    .team-box {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .team-box img {
+        width: 100% !important;
+        max-width: 350px;
+        margin-bottom: 20px;
+    }
+
+    .team-icons {
+        flex-direction: row !important;
+        width: 100% !important;
+        justify-content: center;
+        margin: 20px 0;
+    }
+
+    .team-icons i {
+        margin: 0 15px !important;
+        height: auto !important;
+        padding: 10px;
+    }
+
+    .team-text {
+        padding-left: 0 !important;
+        text-align: center;
+        width: 100%;
+    }
+
+    .info::before,
+    .info::after {
+        width: 100% !important;
+    }
+}
+
+/* ========== SERVICES SECTION ========== */
+@media (max-width: 767px) {
+    .services-box {
+        margin-bottom: 30px;
+    }
+
+    .details {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .details p {
+        width: 100%;
+        padding: 15px;
+        margin-bottom: 10px;
+    }
+
+    .details p::after {
+        display: none;
+    }
+
+    .details span {
+        margin: 10px 0;
+    }
+}
+
+/* ========== STATS SECTION ========== */
 @media (max-width: 767px) {
     .stats-awesome h2 {
         font-size: 28px !important;
         margin-bottom: 30px;
-        padding: 0 15px;
-        text-align: center;
     }
-    
+
     .stats-awesome .stat-box {
         margin-bottom: 20px;
         padding: 25px 15px;
     }
-    
+
     .stats-awesome .stat-box .number {
         font-size: 40px;
     }
-    
+
     .stats-awesome .stat-box .text {
         font-size: 16px;
     }
 }
 
-/* Fix Pricing Section on Mobile */
+/* ========== PRICING SECTION ========== */
 @media (max-width: 767px) {
     .pricing .inner-plan {
         margin-bottom: 30px;
     }
-    
+
     .head-plan .amount {
         font-size: 48px !important;
     }
-    
+
     .head-plan h3 {
         font-size: 22px !important;
     }
-    
+
     .pricing ul li {
-        font-size: 14px;
+        font-size: 15px;
         padding: 15px;
     }
 }
 
-/* Fix Video Section Responsiveness */
+/* ========== VIDEOS SECTION ========== */
 @media (max-width: 991px) {
     .Videos .col-md-3 {
         width: 100%;
     }
-    
+
     .poster-video {
         margin-top: 20px;
     }
-}
 
-@media (max-width: 767px) {
     .Videos .top-videos .head-text {
         flex-direction: column;
         text-align: center;
     }
-    
+
     .Videos .top-videos .head-text h4 {
         margin-bottom: 10px;
     }
-    
+}
+
+@media (max-width: 767px) {
     .Videos .top-videos ul li {
         font-size: 14px;
+        padding: 12px;
     }
 }
 
-/* Fix Discount/Request Section */
+/* ========== GALLERY SECTION ========== */
+@media (max-width: 767px) {
+    .galary-box {
+        padding: 15px 10px;
+    }
+
+    .galary-box .inner-box {
+        border-width: 10px;
+    }
+}
+
+/* ========== FEATURES SECTION ========== */
 @media (max-width: 991px) {
-    .img-container {
-        padding: 60px 20px;
+    .features-box {
+        margin-bottom: 30px;
     }
-    
+}
+
+@media (max-width: 767px) {
+    .text-box h4 {
+        font-size: 24px !important;
+    }
+
+    .text-box p {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    button {
+        width: 100%;
+        margin-top: 10px;
+    }
+}
+
+/* ========== TESTIMONIALS ========== */
+@media (max-width: 767px) {
+    .testem-box {
+        text-align: center;
+        padding-top: 60px;
+    }
+
+    .testem-box img {
+        right: 50%;
+        transform: translateX(50%);
+    }
+}
+
+/* ========== WORK STEPS ========== */
+@media (max-width: 767px) {
+    .work-steps .work-steps-image {
+        margin-bottom: 30px;
+    }
+
+    .steps-box {
+        padding: 20px 15px;
+    }
+}
+
+/* ========== DISCOUNT/REQUEST SECTION ========== */
+@media (max-width: 991px) {
+    .img-container,
     .form-container {
-        padding: 45px 20px;
+        padding: 50px 20px;
     }
-    
+
     .text-discount h2 {
         font-size: 28px !important;
     }
-    
+
     .text-discount p {
         font-size: 16px;
         line-height: 1.7;
@@ -1719,218 +1924,92 @@ footer p{
 
 @media (max-width: 767px) {
     .form-container h2 {
-        font-size: 28px !important;
+        font-size: 24px !important;
     }
-    
+
     .form-container input,
     .form-container textarea {
         font-size: 14px;
+        margin-bottom: 15px;
     }
-    
+
     .form-container button {
         width: 100%;
         font-size: 18px;
     }
 }
 
-/* Fix Gallery Section */
+/* ========== FOOTER ========== */
 @media (max-width: 767px) {
-    .galary-box {
-        padding: 15px 10px;
+    .intro h2 {
+        font-size: 32px !important;
     }
-    
-    .galary-box .inner-box {
-        border-width: 10px;
+
+    .intro i {
+        margin: 5px;
+    }
+
+    .footer img {
+        width: 65px;
     }
 }
 
-/* Fix Team Members Section */
+/* ========== ARTICLES SECTION ========== */
 @media (max-width: 767px) {
-    .team-box {
-        flex-direction: column;
-        text-align: center;
+    .articles-box {
+        margin-bottom: 25px;
     }
-    
-    .team-icons {
-        flex-direction: row;
-        margin: 15px 0;
-    }
-    
-    .team-icons i {
-        margin: 0 10px;
-    }
-    
-    .team-text {
-        padding-left: 0;
-        text-align: center;
+
+    .articles-box .text-box {
+        padding: 15px;
     }
 }
 
-/* Fix Services Section */
-@media (max-width: 767px) {
-    .services-box {
-        margin-bottom: 30px;
-    }
-    
-    .details {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .details p {
-        width: 100%;
-        padding: 10px;
-        margin-bottom: 10px;
-    }
-    
-    .details p::after {
-        display: none;
-    }
-    
-    .details span {
-        margin: 0;
-    }
-}
-
-/* Improve Overall Mobile Padding */
-@media (max-width: 767px) {
-    .container {
-        padding-left: 15px;
-        padding-right: 15px;
-    }
-    
-    section {
-        padding: 60px 0 !important;
-    }
-    
-    .main-title {
-        font-size: 20px;
-        padding: 8px 15px;
-        margin-bottom: 50px;
-    }
-    
-    .main-title::before,
-    .main-title::after {
-        width: 10px;
-        height: 10px;
-    }
-}
-
-/* Fix Images for Mobile */
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-/* Better touch targets for mobile */
-@media (max-width: 767px) {
-    a, button {
-        min-height: 44px;
-        min-width: 44px;
-    }
-}
-/* ============ TEAM MEMBERS MOBILE FIX ============ */
-
-/* Tablet and below */
+/* ========== LANDING PAGE ========== */
 @media (max-width: 991px) {
-    .team-box {
-        flex-direction: column;
-        align-items: center;
+    .landing .text h1 {
+        font-size: 48px;
     }
-    
-    .team-box img {
-        width: 100%;
-        max-width: 350px;
-        margin-bottom: 20px;
-    }
-    
-    .team-icons {
-        flex-direction: row !important;
-        width: 100%;
-        justify-content: center;
-        margin: 20px 0;
-    }
-    
-    .team-icons i {
-        margin: 0 15px;
-        height: auto;
-        padding: 10px;
-    }
-    
-    .team-text {
-        padding-left: 0 !important;
-        text-align: center;
-        width: 100%;
-    }
-    
-    .info::before,
-    .info::after {
-        width: 100% !important;
-    }
-}
 
-/* Mobile specific adjustments */
-@media (max-width: 767px) {
-    .team-members {
-        padding: 60px 0;
-    }
-    
-    .team-box {
-        flex-direction: column;
-    }
-    
-    .team-box img {
-        width: 100%;
-        border-radius: 10px;
-    }
-    
-    .team-icons {
-        flex-direction: row !important;
-        width: 100%;
-        margin: 15px 0;
-    }
-    
-    .team-icons a {
-        margin: 0 10px;
-    }
-    
-    .team-icons i {
-        font-size: 20px;
-        height: auto;
-    }
-    
-    .team-text {
-        padding-left: 0 !important;
-        text-align: center;
-    }
-    
-    .team-text h5 {
-        font-size: 20px;
-        margin-bottom: 10px;
-    }
-    
-    .team-text p {
-        font-size: 14px;
-        color: #777;
-    }
-    
-    .info {
-        margin-bottom: 40px;
-    }
-}
-
-/* Small mobile devices */
-@media (max-width: 480px) {
-    .team-box img {
-        max-width: 100%;
-    }
-    
-    .team-icons a {
-        margin: 0 8px;
-    }
-    
-    .team-icons i {
+    .landing .text p {
         font-size: 18px;
     }
 }
 
+@media (max-width: 767px) {
+    .landing {
+        padding-top: 80px;
+    }
+
+    .landing .text h1 {
+        font-size: 32px;
+    }
+
+    .landing .text p {
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+    .landing .image img {
+        max-width: 280px;
+    }
+}
+
+/* ========== BETTER TOUCH TARGETS ========== */
+@media (max-width: 767px) {
+    a, button, input[type="submit"] {
+        min-height: 44px;
+    }
+}
+
+/* ========== PERFORMANCE: Reduce animations on mobile ========== */
+@media (max-width: 767px) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.5s !important;
+        transition-duration: 0.3s !important;
+    }
+}
+
+/* ========== END OF RESPONSIVE IMPROVEMENTS ========== */
